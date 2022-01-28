@@ -5,7 +5,7 @@ public class NJSlotProgressive extends Slot {
 		components.add("Small");
 		components.add("coins");
 		components.add("CRT");
-		components.add("X77");
+		components.add("X86");
 	}
 	
 	void ship() {
