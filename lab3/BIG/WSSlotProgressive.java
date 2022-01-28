@@ -1,6 +1,7 @@
 package BIG;
 
 public class WSSlotProgressive extends Slot{
+
     public WSSlotProgressive() {
         name="Progressive";
         software = "Android";
