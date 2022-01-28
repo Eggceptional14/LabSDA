@@ -1,6 +1,6 @@
 public class Balsam extends Tree {
     public Balsam() {
-        description = "Balsam fir tree decorated with";
+        this.description = "Balsam fir tree decorated with";
     }
 
     public double cost() {

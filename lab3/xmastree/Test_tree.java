@@ -8,6 +8,6 @@ public class Test_tree {
 		mytree = new Star(mytree);
 		mytree = new Ruffles(mytree);
 		// mytree = new Star(mytree);
-		System.out.println(mytree.getDescription() + " costs:" + mytree.cost());
+		System.out.println(mytree.getDescription() + " costs: " + mytree.cost());
 	}
 }
