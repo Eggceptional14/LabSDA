@@ -1,5 +1,5 @@
 
-public class WSSlotstore extends SlotStore {
+public class WSSlotStore extends SlotStore {
     protected Slot makeSlot(slottype type) {
         if (type.equals(slottype.progressive)) return new WSSlotProgressive();
         else if (type.equals(slottype.straight)) return new WSSlotStraight();
