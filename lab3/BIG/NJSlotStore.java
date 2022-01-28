@@ -7,6 +7,16 @@ public class NJSlotStore extends SlotStore {
 			tmp = new NJSlotProgressive();
 			tmp.cost=(float) (tmp.cost*1.1);
 		}
+		else if (type.equals(slottype.straight)) {
+			tmp = new NJSlotStraight();
+			tmp.cost=(float) (tmp.cost*1.1);
+		}
+		else if (type.equals(slottype.bonus)) {
+			tmp = new NJSlotBonus();
+			tmp.cost=(float) (tmp.cost*1.1);
+		}
+		else return null;
+
 		return tmp;
 	}
 }
