@@ -3,7 +3,7 @@ public class TestSlots {
 	public static void main(String[] args) {
 		SlotStore NVStore = new NVSlotStore();
 		SlotStore NJStore = new NJSlotStore();
-		SlotStore WSStore = new WESlotStore();
+		SlotStore WSStore = new WSSlotStore();
 
 		Slot slot = NVStore.orderSlot(slottype.progressive);
 		System.out.println("Taj Mahal ordered a "+ slot.getName());
