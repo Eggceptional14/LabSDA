@@ -4,8 +4,11 @@ public abstract class Slot {
 	
 	Cabinet cabinet;
 	Display display;
+	GPU gpu;
+	Payment payment;
+	OS software;
 	String name;
-	String software = "linux";
+
 	ArrayList components = new ArrayList();
 	
 	abstract void build();
@@ -41,6 +44,14 @@ public abstract class Slot {
 		}
 		if (display != null) {
 			result.append(display);
+			result.append("\n");
+		}
+		if (payment != null) {
+			result.append(payment);
+			result.append("\n");
+		}
+		if (gpu != null) {
+			result.append(gpu);
 			result.append("\n");
 		}
 		return result.toString();
