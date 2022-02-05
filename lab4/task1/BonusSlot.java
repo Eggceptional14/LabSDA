@@ -10,5 +10,7 @@ public class BonusSlot extends Slot {
 		System.out.println("Building " + name);
 		cabinet = componentFactory.createCabinet();
 		display = componentFactory.createDisplay();
+		gpu = componentFactory.createGPU();
+		payment = componentFactory.createPayment();
 	}
 }

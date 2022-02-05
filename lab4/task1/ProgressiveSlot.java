@@ -9,5 +9,7 @@ public class ProgressiveSlot extends Slot {
 	void build() {
 		cabinet = componentFactory.createCabinet();
 		display = componentFactory.createDisplay();
+		gpu = componentFactory.createGPU();
+		payment = componentFactory.createPayment();
 	}
 }
