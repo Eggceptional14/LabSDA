@@ -1,4 +1,4 @@
-package BIG;
+
 
 public class WSSlotStraight extends Slot{
 

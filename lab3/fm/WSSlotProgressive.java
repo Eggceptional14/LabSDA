@@ -1,4 +1,3 @@
-package BIG;
 
 public class WSSlotProgressive extends Slot{
 
