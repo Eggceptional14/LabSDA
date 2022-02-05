@@ -7,4 +7,6 @@ public class NVSlotComponentFactory implements SlotComponentFactory {
 	public Display createDisplay() {
 		return new LCD();
 	}
+	public Payment createPayment() { return new Payment(); }
+	public GPU createGPU() { return new GPU(); }
 }

@@ -7,4 +7,6 @@ public class NJSlotComponentFactory implements SlotComponentFactory {
 	public Display createDisplay() {
 		return new Reels();
 	}
+	public Payment createPayment() { return new Payment(); }
+	public GPU createGPU() { return new GPU(); }
 }
