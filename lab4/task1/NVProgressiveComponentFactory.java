@@ -1,0 +1,10 @@
+public class NVProgressiveComponentFactory implements SlotComponentFactory {
+    public Cabinet createCabinet() {
+        return new mediumCabinet();
+    }
+    public Display createDisplay() {
+        return new LCD();
+    }
+    public Payment createPayment() { return new Ticket(); }
+    public GPU createGPU() { return new X77(); }
+}
