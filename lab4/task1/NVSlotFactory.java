@@ -12,6 +12,10 @@ public class NVSlotFactory extends SlotFactory {
 			slot=new ProgressiveSlot(componentFactory);
 			slot.setName("Nevada Style Progressive Slot");
 		}
+		else if (item.equals("straight")) {
+			slot=new StraightSlot(componentFactory);
+			slot.setName("Nevada Style Straight Slot");
+		}
 		return slot;
 	}
 }
