@@ -1,4 +1,3 @@
-package task1;
 
 public class WSSlotComponentFactory implements SlotComponentFactory {
     public Cabinet createCabinet() {
