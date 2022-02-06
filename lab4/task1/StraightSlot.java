@@ -2,7 +2,7 @@ public class StraightSlot extends Slot {
     SlotComponentFactory componentFactory;
 
     public StraightSlot(SlotComponentFactory componentFactory) {
-        this.componentFactory= componentFactory;
+        this.componentFactory = componentFactory;
     }
 
     void build() {
@@ -10,5 +10,7 @@ public class StraightSlot extends Slot {
         display = componentFactory.createDisplay();
         gpu = componentFactory.createGPU();
         payment = componentFactory.createPayment();
+        software = componentFactory.createOS();
+
     }
 }
