@@ -1,7 +1,7 @@
 public class NJBonusComponentFactory implements SlotComponentFactory {
 
     public Cabinet createCabinet() {
-        return new largeCabinet();
+        return new LargeCabinet();
     }
 
     public Display createDisplay() {

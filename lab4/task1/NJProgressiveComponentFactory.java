@@ -1,7 +1,7 @@
 public class NJProgressiveComponentFactory implements SlotComponentFactory {
 
     public Cabinet createCabinet() {
-        return new smallCabinet();
+        return new SmallCabinet();
     }
 
     public Display createDisplay() {

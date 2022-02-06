@@ -2,7 +2,7 @@
 public class NVStraightComponentFactory implements SlotComponentFactory {
 
 	public Cabinet createCabinet() {
-		return new largeCabinet();
+		return new LargeCabinet();
 	}
 
 	public Display createDisplay() {
