@@ -5,15 +5,15 @@ public class NVSlotFactory extends SlotFactory {
 		Slot slot = null;
 		SlotComponentFactory componentFactory = null;
 		if (item.equals("bonus")) {
-			componentFactory = new NVBonusComponentFactory();
+			componentFactory = new NVComponentFactory();
 			slot = new BonusSlot(componentFactory);
 			slot.setName("Nevada Style Bonus Slot");
 		} else if (item.equals("progressive")) {
-			componentFactory = new NVProgressiveComponentFactory();
+			componentFactory = new NVComponentFactory();
 			slot = new ProgressiveSlot(componentFactory);
 			slot.setName("Nevada Style Progressive Slot");
 		} else if (item.equals("straight")) {
-			componentFactory = new NVStraightComponentFactory();
+			componentFactory = new NVComponentFactory();
 			slot = new StraightSlot(componentFactory);
 			slot.setName("Nevada Style Straight Slot");
 		}
