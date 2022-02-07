@@ -6,13 +6,13 @@ public class BonusSlot extends Slot {
 		this.componentFactory = componentFactory;
 	}
 
-	void build() {
+	void build(String type) {
 		System.out.println("Building " + name);
-		cabinet = componentFactory.createCabinet();
-		display = componentFactory.createDisplay();
-		gpu = componentFactory.createGPU();
-		payment = componentFactory.createPayment();
-		software = componentFactory.createOS();
+		cabinet = componentFactory.createCabinet(type);
+		display = componentFactory.createDisplay(type);
+		gpu = componentFactory.createGPU(type);
+		payment = componentFactory.createPayment(type);
+		software = componentFactory.createOS(type);
 
 	}
 }

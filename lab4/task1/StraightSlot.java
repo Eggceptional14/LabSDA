@@ -5,12 +5,12 @@ public class StraightSlot extends Slot {
         this.componentFactory = componentFactory;
     }
 
-    void build() {
-        cabinet = componentFactory.createCabinet();
-        display = componentFactory.createDisplay();
-        gpu = componentFactory.createGPU();
-        payment = componentFactory.createPayment();
-        software = componentFactory.createOS();
+    void build(String type) {
+        cabinet = componentFactory.createCabinet(type);
+        display = componentFactory.createDisplay(type);
+        gpu = componentFactory.createGPU(type);
+        payment = componentFactory.createPayment(type);
+        software = componentFactory.createOS(type);
 
     }
 }
