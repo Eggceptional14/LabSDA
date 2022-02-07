@@ -1,7 +1,6 @@
 
 public class BonusSlot extends Slot {
 	SlotComponentFactory componentFactory;
-	String type = "bonus";
 
 	public BonusSlot(SlotComponentFactory componentFactory) {
 		this.componentFactory = componentFactory;
