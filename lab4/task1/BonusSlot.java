@@ -7,7 +7,7 @@ public class BonusSlot extends Slot {
 		this.componentFactory = componentFactory;
 	}
 
-	void build() {
+	void build(String type) {
 		System.out.println("Building " + name);
 		cabinet = componentFactory.createCabinet(type);
 		display = componentFactory.createDisplay(type);

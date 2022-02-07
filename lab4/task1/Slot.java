@@ -11,7 +11,7 @@ public abstract class Slot {
 
 	ArrayList components = new ArrayList();
 	
-	abstract void build();
+	abstract void build(String type);
 	
 	void collectParts() {
 		System.out.println("fetching components:");
