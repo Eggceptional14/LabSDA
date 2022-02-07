@@ -3,16 +3,16 @@ public class WSSlotFactory extends SlotFactory {
         Slot slot = null;
         SlotComponentFactory componentFactory = null;
         if (item.equals("bonus")) {
-            componentFactory = new WSBonusComponentFactory();
+            componentFactory = new WSComponentFactory();
             slot = new BonusSlot(componentFactory);
             slot.setName("Washington Style Bonus Slot");
         } else if (item.equals("progressive")) {
             slot = new ProgressiveSlot(componentFactory);
-            componentFactory = new WSProgressiveComponentFactory();
+            componentFactory = new WSComponentFactory();
             slot.setName("Washington Style Progressive Slot");
         } else if (item.equals("straight")) {
             slot = new StraightSlot(componentFactory);
-            componentFactory = new WSStraightComponentFactory();
+            componentFactory = new WSComponentFactory();
             slot.setName("Washington Style Straight Slot");
         }
         return slot;
