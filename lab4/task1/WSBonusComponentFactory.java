@@ -1,7 +1,7 @@
 
 public class WSBonusComponentFactory implements SlotComponentFactory {
     public Cabinet createCabinet() {
-        return new mediumCabinet();
+        return new MediumCabinet();
     }
 
     public Display createDisplay() {

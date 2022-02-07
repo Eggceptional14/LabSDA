@@ -1,11 +1,11 @@
 public interface SlotComponentFactory {
-	public Cabinet createCabinet();
+	public Cabinet createCabinet(String type);
 
-	public Display createDisplay();
+	public Display createDisplay(String type);
 
-	public GPU createGPU();
+	public GPU createGPU(String type);
 
-	public Payment createPayment();
+	public Payment createPayment(String type);
 
-	public OS createOS();
+	public OS createOS(String type);
 }

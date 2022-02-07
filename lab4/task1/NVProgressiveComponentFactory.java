@@ -1,6 +1,6 @@
 public class NVProgressiveComponentFactory implements SlotComponentFactory {
     public Cabinet createCabinet() {
-        return new mediumCabinet();
+        return new MediumCabinet();
     }
 
     public Display createDisplay() {
