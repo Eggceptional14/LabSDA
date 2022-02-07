@@ -1,7 +1,7 @@
 public class WSSlotFactory extends SlotFactory {
     protected Slot makeSlot(String item) {
         Slot slot = null;
-        SlotComponentFactory componentFactory = new WSSlotComponentFactory();
+        SlotComponentFactory componentFactory = new WSComponentFactory();
         if (item.equals("bonus")) {
             slot = new BonusSlot(componentFactory);
             slot.setName("Washington Style Bonus Slot");

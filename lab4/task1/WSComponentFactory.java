@@ -1,5 +1,5 @@
 
-public class WSSlotComponentFactory implements SlotComponentFactory {
+public class WSComponentFactory implements SlotComponentFactory {
     public Cabinet createCabinet(String type) {
         switch (type) {
             case "straight":
