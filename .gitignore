@@ -1,0 +1,12 @@
+
+*.class
+out/production/LabSDA/BarProducer.class
+out/production/LabSDA/EatBreakfast.class
+out/production/LabSDA/Omelette.class
+out/production/LabSDA/ScrambledEggs.class
+out/production/LabSDA/SingletonfactoryTest.class
+out/production/LabSDA/SunnySide.class
+out/production/LabSDA/WonkaBarFactory.class
+*.class
+*.class
+out/production/LabSDA/EatBreakfast.class
