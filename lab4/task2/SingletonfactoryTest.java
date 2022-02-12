@@ -8,7 +8,7 @@ public class SingletonfactoryTest {
 		t2.start();
 		t3.start();
 		t4.start();
-		// t1.interrupt();
-		// t1.interrupt();
+		 t1.interrupt();
+		 t1.interrupt();
 	}
 }
