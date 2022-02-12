@@ -22,7 +22,7 @@ public class BarProducer extends Thread {
 			if (barType == "wonka") {
 				WonkaBarFactory.getInstance().create(id);
 			} else if (barType == "oompaloompa") {
-				OompaloompaFactory.getInstance().create(id);
+				OompaloompaBarFactoy.getInstance().create(id);
 			}
 		}
 	}
