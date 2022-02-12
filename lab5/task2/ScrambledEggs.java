@@ -1,4 +1,3 @@
-package breakfast;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -27,17 +26,20 @@ public class ScrambledEggs extends EggCooking {
 	}
 
 	public boolean askCustomer() {
-		int ans;
+		String ans;
 		Scanner sc = new Scanner(System.in);
-		System.out.print("Do you want to spread salt and pepper on top (y/n)? ");
-		ans = sc.nextInt();
+		System.out.print("Do you want to spread salt and pepper on your scramble eggs (y/n)? ");
+		ans = sc.nextLine();
+		ans.toLowerCase();
 
-		if (ans == 121) {
-			return true;
-		} else if (ans == 110) {
-			return false;
-		} else {
-			return false;
-		}
+		// System.out.println(ans.toLowerCase().equals("y"));
+		return ans.toLowerCase().equals("y");
+		
+		// if (ans.toLowerCase().equals("y")) {
+		// 	return true;
+		// }
+		// else {
+		// 	return false;
+		// }
 	}
 }

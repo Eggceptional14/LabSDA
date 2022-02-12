@@ -1,4 +1,3 @@
-package breakfast;
 
 public abstract class EggCooking {
     void TemplateMethod() {
@@ -10,7 +9,8 @@ public abstract class EggCooking {
         serve();
 
         if (askCustomer()) {
-            addSpread(); }
+            addSpread(); 
+        }
     }
 
     abstract void crackEggs(int eggNum);

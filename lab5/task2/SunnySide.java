@@ -1,4 +1,3 @@
-package breakfast;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -27,18 +26,14 @@ public class SunnySide extends EggCooking{
 	}
 
 	public boolean askCustomer() {
-		int ans;
+		char ans;
 		Scanner sc = new Scanner(System.in);
-		System.out.print("Do you want to spread salt and pepper on top (y/n)? ");
-		ans = sc.nextInt();
-
-		if (ans == 121) {
-			return true;
-		} else if (ans == 110) {
-			return false;
-		} else {
-			return false;
-		}
+		System.out.print("Do you want to spread salt and pepper on your sunny side egg (y/n)? ");
+		ans = sc.next().charAt(0);
+		
+		ans = Character.toLowerCase(ans);
+		// sc.close();
+		return ans == 'y';
 	}
 }
 

@@ -1,4 +1,4 @@
-package breakfast;
+import java.time.Year;
 
 public class EatBreakfast {
 	public static void main(String[] args) {
@@ -6,24 +6,32 @@ public class EatBreakfast {
 		scrambled.crackEggs(2);
 		scrambled.stirEggs();
 		scrambled.cook();
-		scrambled.askCustomer();
 		scrambled.serve();
+		if (scrambled.askCustomer()) {
+            scrambled.addSpread(); 
+        }
 
 
 		Omelette omelette = new Omelette();
 		omelette.crackEggs(3);
 		omelette.prepare();
 		omelette.cook();
-		omelette.askCustomer();
 		omelette.serve();
+		if (omelette.askCustomer()) {
+            omelette.addSpread(); 
+        }
+
 
 
 		SunnySide sunny = new SunnySide();
 		sunny.crackEggs(1);
 		sunny.prepare();
 		sunny.cook();
-		sunny.askCustomer();
 		sunny.serve();
+		if (sunny.askCustomer()) {
+            sunny.addSpread(); 
+        }
+
 
 	}
 

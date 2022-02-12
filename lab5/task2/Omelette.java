@@ -1,9 +1,9 @@
-package breakfast;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
+import java.lang.Character;
 
 public class Omelette extends EggCooking {
 
@@ -27,17 +27,13 @@ public class Omelette extends EggCooking {
 	}
 
 	public boolean askCustomer() {
-		int ans;
+		char ans;
 		Scanner sc = new Scanner(System.in);
-		System.out.print("Do you want to spread salt and pepper on top (y/n)? ");
-		ans = sc.nextInt();
-
-		if (ans == 121) {
-			return true;
-		} else if (ans == 110) {
-			return false;
-		} else {
-			return false;
-		}
+		System.out.print("Do you want to spread salt and pepper on your omelette (y/n)? ");
+		ans = sc.next().charAt(0);
+		
+		ans = Character.toLowerCase(ans);
+		// sc.close();
+		return ans == 'y';
 	}
 }
