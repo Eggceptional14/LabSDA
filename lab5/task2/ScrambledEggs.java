@@ -30,16 +30,6 @@ public class ScrambledEggs extends EggCooking {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Do you want to spread salt and pepper on your scramble eggs (y/n)? ");
 		ans = sc.nextLine();
-		ans.toLowerCase();
-
-		// System.out.println(ans.toLowerCase().equals("y"));
 		return ans.toLowerCase().equals("y");
-		
-		// if (ans.toLowerCase().equals("y")) {
-		// 	return true;
-		// }
-		// else {
-		// 	return false;
-		// }
 	}
 }

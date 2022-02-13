@@ -27,13 +27,10 @@ public class Omelette extends EggCooking {
 	}
 
 	public boolean askCustomer() {
-		char ans;
+		String ans;
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Do you want to spread salt and pepper on your omelette (y/n)? ");
-		ans = sc.next().charAt(0);
-		
-		ans = Character.toLowerCase(ans);
-		// sc.close();
-		return ans == 'y';
+		ans = sc.nextLine();
+		return ans.toLowerCase().equals("y");
 	}
 }
