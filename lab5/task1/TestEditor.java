@@ -4,13 +4,16 @@ public class TestEditor {
 		myDocument.Write("Hey I just met you");
 		myDocument.Write("And this is crazy");
 		myDocument.Write("But here’s my number");
+		myDocument.Undo(2);
+		System.out.println(myDocument.Read());
+
 		// myDocument.Write("So call me maybe");
 		// myDocument.Erase("And this is crazy");
-		myDocument.Undo(2);
-		myDocument.Redo();
+		// myDocument.Undo(0);
+		// myDocument.Redo();
+		// myDocument.Undo(1);
 		// myDocument.Bold(1);
-		System.out.println(myDocument.Read());
-		myDocument.printCommandBuffer();
+		// myDocument.printCommandBuffer();
 	}
 	// myDocument.Erase("So call me maybe");
 	// System.out.println(myDocument.Read());

@@ -2,7 +2,6 @@ import java.util.ArrayList;
 
 public class DocumentInvoker {
 	private ArrayList<Command> commands = new ArrayList<Command>();
-	private ArrayList<Command> undoCache = new ArrayList<Command>();
 	private Document currentdoc;
 
 	public DocumentInvoker(String name) {
@@ -13,25 +12,25 @@ public class DocumentInvoker {
 	public void Undo() {
 		Command tmp = (Command) commands.get(commands.size() - 1);
 		tmp.undo();
-		undoCache.add(commands.get(commands.size() - 1));
-		commands.remove(commands.size() - 1);
+		commands.remove(commands.get(commands.size() - 1));
 	}
 
 	// redo the last command
 	public void Redo() {
-		if (undoCache.size() > 0) {
-			Command tmp = (Command) undoCache.get(undoCache.size() - 1);
-			tmp.redo();
-			commands.add(tmp);
-			undoCache.remove(undoCache.size() - 1);
-		}
+		Command tmp = (Command) commands.get(commands.size() - 1);
+		tmp.redo();
+		commands.add(commands.get(commands.size() - 1));
 	}
 
 	public void Redo(int level) {
 		System.out.println("---- Redo level " + level);
-		Command tmp = (Command) commands.get(level);
-		tmp.redo();
-		commands.add(tmp);
+		if (level < commands.size()) {
+			Command tmp = (Command) commands.get(level);
+			tmp.redo();
+			commands.add(tmp);
+		} else {
+			System.out.println("Invalid command undo");
+		}
 	}
 
 	public void Undo(int level) {
@@ -39,12 +38,11 @@ public class DocumentInvoker {
 		if (level < commands.size()) {
 			Command tmp = (Command) commands.get(level);
 			tmp.undo();
-			undoCache.add(tmp);
-			commands.remove(level);
+			commands.remove(commands.get(commands.size() - 1));
+
 		} else {
 			System.out.println("Invalid command undo");
 		}
-
 	}
 
 	public void Write(String text) {

@@ -21,4 +21,5 @@ public class DocumentBoldCommand implements Command {
 	public String toString() {
 		return "Bold";
 	}
+
 }
