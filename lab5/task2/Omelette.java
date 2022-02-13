@@ -8,7 +8,7 @@ import java.lang.Character;
 public class Omelette extends EggCooking {
 
 	public void crackEggs(int omlEggNum) {
-		System.out.println("Cracking " + omlEggNum + "eggs");
+		System.out.println("Cracking " + omlEggNum + " eggs");
 	}
 
 	public void cook() {
