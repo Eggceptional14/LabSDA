@@ -11,23 +11,23 @@ public class DocumentInvoker {
 	// undo the last command
 	public void Undo() {
 		Command tmp = (Command) commands.get(commands.size() - 1);
-		tmp.undo();
-		commands.remove(commands.get(commands.size() - 1));
+		DocumentUndoCommand cmd = new DocumentUndoCommand(tmp);
+		commands.add(cmd);
 	}
 
 	// redo the last command
 	public void Redo() {
 		Command tmp = (Command) commands.get(commands.size() - 1);
-		tmp.redo();
-		commands.add(commands.get(commands.size() - 1));
+		DocumentRedoCommand cmd = new DocumentRedoCommand(tmp);
+		commands.add(cmd);
 	}
 
 	public void Redo(int level) {
 		System.out.println("---- Redo level " + level);
 		if (level < commands.size()) {
 			Command tmp = (Command) commands.get(level);
-			tmp.redo();
-			commands.add(tmp);
+			DocumentRedoCommand cmd = new DocumentRedoCommand(tmp);
+			commands.add(cmd);
 		} else {
 			System.out.println("Invalid command undo");
 		}
@@ -37,8 +37,8 @@ public class DocumentInvoker {
 		System.out.println("---- Undo level " + level);
 		if (level < commands.size()) {
 			Command tmp = (Command) commands.get(level);
-			tmp.undo();
-			commands.remove(commands.get(commands.size() - 1));
+			DocumentUndoCommand cmd = new DocumentUndoCommand(tmp);
+			commands.add(cmd);
 
 		} else {
 			System.out.println("Invalid command undo");
