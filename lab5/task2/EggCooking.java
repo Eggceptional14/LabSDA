@@ -1,6 +1,6 @@
 
 public abstract class EggCooking {
-    void TemplateMethod(int eggNum) {
+    void prepareEgg(int eggNum) {
         crackEggs(eggNum);
         stirEggs();
         prepare();
@@ -24,7 +24,4 @@ public abstract class EggCooking {
     void serve() {
         System.out.println("Putting the eggs on the plate");
     }
-
-
-
 }
