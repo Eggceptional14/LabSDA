@@ -1,7 +1,6 @@
 
 public abstract class EggCooking {
-    void TemplateMethod() {
-        int eggNum=0;
+    void TemplateMethod(int eggNum) {
         crackEggs(eggNum);
         stirEggs();
         prepare();
@@ -11,6 +10,7 @@ public abstract class EggCooking {
         if (askCustomer()) {
             addSpread(); 
         }
+        System.out.println("--------------------");
     }
 
     abstract void crackEggs(int eggNum);
