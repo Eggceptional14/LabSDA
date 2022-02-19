@@ -1,4 +1,3 @@
-package task2;
 
 public class TeaFacade {
 
