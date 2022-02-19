@@ -16,8 +16,8 @@ public class TeaFacade {
         Tea tea = new Tea(teaType);
         infuser.addTea(tea);
         water.boilWater();
-        blueCup.addWater(water);
-        blueCup.setSteepTime(15);
-        blueCup.steep();
+        cup.addWater(water);
+        cup.setSteepTime(15);
+        cup.steep();
     }
 }
