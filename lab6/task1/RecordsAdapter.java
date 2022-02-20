@@ -1,4 +1,4 @@
-public class RecordsAdapter extends Database implements Target {
+public class RecordsAdapter implements DatabaseTarget {
     private Records records;
 
     public RecordsAdapter(Records records) {
