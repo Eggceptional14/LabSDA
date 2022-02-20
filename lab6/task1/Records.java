@@ -55,4 +55,8 @@ public class Records {
         return false;
     }
 
+    public ArrayList<Employee> getAllEmployees() {
+        return employees;
+    }
+
 }

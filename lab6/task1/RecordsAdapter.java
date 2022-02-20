@@ -1,4 +1,4 @@
-public class RecordsAdapter extends Database {
+public class RecordsAdapter extends Database implements Target {
     private Records records;
 
     public RecordsAdapter(Records records) {
@@ -10,7 +10,7 @@ public class RecordsAdapter extends Database {
         this.records.insert(employee);
     }
 
-    public void deleteEmployee(long emp_num) {
+    public void removeEmployee(long emp_num) {
         // Code to remove employee
         records.remove(emp_num);
     }
@@ -20,11 +20,13 @@ public class RecordsAdapter extends Database {
         return records.isEmployee(emp_num);
     }
 
-    public void printRecord() {
-        for (int i = 0; i < employees.size(); i++) {
-            Employee temp = employees.get(i);
-            System.out.println(String.valueOf(temp.getEmpNum()) + " " + temp.getName() + " " + temp.getSurname() + " " +
+    public void printEmployees() {
+        for (int i = 0; i < this.records.getAllEmployees().size(); i++) {
+            Employee temp = this.records.getAllEmployees().get(i);
+            System.out.println(String.valueOf(temp.getEmpNum()) + " " + temp.getName() +
+                    " " + temp.getSurname() + " " +
                     String.valueOf(temp.getSalary()));
         }
     }
+
 }

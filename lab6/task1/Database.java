@@ -49,4 +49,7 @@ public class Database {
         }
     }
 
+    public Vector<Employee> getEmployees() {
+        return employees;
+    }
 }
