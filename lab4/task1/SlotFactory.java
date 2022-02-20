@@ -1,3 +1,5 @@
+package task1;
+
 public abstract class SlotFactory {
 
 	public  Slot orderSlot(String type) {

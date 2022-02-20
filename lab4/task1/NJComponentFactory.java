@@ -1,3 +1,5 @@
+package task1;
+
 public class NJComponentFactory implements SlotComponentFactory {
 
     public Cabinet createCabinet(String type) {

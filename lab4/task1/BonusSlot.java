@@ -1,3 +1,4 @@
+package task1;
 
 public class BonusSlot extends Slot {
 	SlotComponentFactory componentFactory;

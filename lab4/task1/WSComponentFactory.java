@@ -1,3 +1,4 @@
+package task1;
 
 public class WSComponentFactory implements SlotComponentFactory {
     public Cabinet createCabinet(String type) {

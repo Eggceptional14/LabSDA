@@ -1,3 +1,5 @@
+package task1;
+
 public class StraightSlot extends Slot {
     SlotComponentFactory componentFactory;
 

@@ -1,3 +1,5 @@
+package task1;
+
 public class WSSlotFactory extends SlotFactory {
     protected Slot makeSlot(String item) {
         Slot slot = null;
