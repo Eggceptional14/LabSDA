@@ -20,7 +20,8 @@ public class TableMemento implements java.io.Serializable {
     TableMemento(Vector columnIdentifiers, Vector dataVector)
     {
 	// COMPLETE.
-
+        this.columnIdentifiers = (List)columnIdentifiers;
+        this.dataList =(List)dataVector;
 
     }
 
@@ -29,15 +30,14 @@ public class TableMemento implements java.io.Serializable {
     Vector getColumnIdentifiers()
     {
 	// COMPLETE.
-        throw new UnsupportedOperationException();
-
+        return (Vector)columnIdentifiers;
 
     }
 
     Vector getDataVector()
     {
 	// COMPLETE.
-        throw new UnsupportedOperationException();
+        return (Vector)dataList;
 
 
 
