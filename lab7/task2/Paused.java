@@ -36,4 +36,19 @@ public class Paused implements State {
 		
 		return true;
 	}
+
+	public boolean pressRewind() {
+		System.out.println("Cannot rewind! The player is on paused!");
+
+		return false;
+	}
+
+	public boolean pressLocked() {
+		System.out.println("The remote is now locked.");
+        Locked locked = (Locked) remote.getLockedState();
+        locked.setPrevState(remote.getPausedState());
+        remote.setState(locked);
+
+		return true;
+	}
 }
