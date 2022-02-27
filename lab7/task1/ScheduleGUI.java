@@ -50,6 +50,8 @@ public class ScheduleGUI extends JFrame { // Caretaker
             }
         });
 
+        tableModel = new ScheduleTableModel(data, columnNames);
+        memento = tableModel.createMemento();
         JMenuBar mb = new JMenuBar();
         JMenu fileMenu = new JMenu("File");
         // Add "Save As.." menu item here; register corresponding
@@ -121,7 +123,6 @@ public class ScheduleGUI extends JFrame { // Caretaker
         mb.add(fileMenu);
         setJMenuBar(mb);
 
-        tableModel = new ScheduleTableModel(data, columnNames);
         final JTable table = new JTable(tableModel);
         table.setPreferredScrollableViewportSize(new Dimension(500, 70));
         JScrollPane scrollPane = new JScrollPane(table);
@@ -145,8 +146,9 @@ public class ScheduleGUI extends JFrame { // Caretaker
             public void actionPerformed(ActionEvent evt) {
                 // Set memento.
                 // COMPLETE.
+                System.out.println("####" + memento);
+
                 tableModel.setMemento(memento);
-                System.out.println(memento);
 
             }
         });
@@ -160,7 +162,6 @@ public class ScheduleGUI extends JFrame { // Caretaker
 
         // Take a memento for the initial state of the table.
         // COMPLETE.
-        memento = tableModel.createMemento();
 
     }
 
