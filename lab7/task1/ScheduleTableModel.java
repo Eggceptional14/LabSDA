@@ -57,12 +57,20 @@ public class ScheduleTableModel extends DefaultTableModel {
     public Memento createMemento() {
         // COMPLETE.
         int numberOfCols = getColumnCount();
-        Vector colIdentifiers = new Vector(numberOfCols);
+        Vector<String> colIdentifiers = new Vector<String>(numberOfCols);
         for (int i = 0; i < numberOfCols; i++) {
             colIdentifiers.add(getColumnName(i));
         }
 
-        return new Memento(columnIdentifiers, getDataVector());
+        int numRows = getRowCount();
+        Vector newDataVector = new Vector(numRows);
+        Vector rows = getDataVector();
+        for (int i = 0; i < numRows; i++) {
+            Vector row = (Vector) ((Vector) rows.get(i)).clone();
+            newDataVector.add(i, row);
+        }
+
+        return new Memento(columnIdentifiers, newDataVector);
 
     }
 
