@@ -1,0 +1,5 @@
+Bob is the delegation of ArrayList class to store Moods.
+
+GetMood function has addional features from the get() of ArrayList.
+
+Helps the program to have bettere abstraction.

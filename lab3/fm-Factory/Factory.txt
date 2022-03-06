@@ -1,0 +1,8 @@
+Each region has its own SlotStore (factory) class.
+
+Each Store(factory) will create different type of Slot depends on the input type.
+
+WSSlotStore can create:
+    WS Bonus Slot, WS Progressive Slot, WS Straight Slot
+by defining type of slot (bonus,straight,progressive) but cannot create slot from different region.
+    

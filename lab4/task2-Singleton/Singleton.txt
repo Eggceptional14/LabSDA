@@ -1,0 +1,111 @@
+2 typees of chocolate bar OompaLoompa and Wonka created by Factory class.
+id in each bar class use to check that we have only 1 Factory instance.
+
+OoompaLoompaBarFactory and WonkaBarFactory is our Singleton factory (only 1 instance for each type of factory).
+
+
+public class OompaloompaBarFactoy implements Factory {
+    private int counter = 0;
+
+## volatile : value of variable never be cached ; value may change outside of the scope of the program itself. 
+    private volatile static OompaloompaBarFactoy uniqueInstance;
+
+
+    ### private constructor ###
+    private OompaloompaBarFactoy() {
+    }
+
+    public synchronized Bar create(int id) {
+        Bar bar = new OompaloompaBar(counter++);
+        System.out.println(id + " creates new Oompalompa bar created with id:" + counter);
+        return bar;
+    }
+
+    ### synchronized for thread safe ###
+    ### static : can be call using class name -> OompaLoompaBarFactory.getInstance(); ###
+    public static synchronized OompaloompaBarFactoy getInstance() {
+
+## Lazy instantiation : program refrains from creating certain resources until the resource is first needed. ##
+        if (uniqueInstance == null) {   
+            uniqueInstance = new OompaloompaBarFactoy();
+
+        }
+        return uniqueInstance;
+
+    }
+}
+
+3 ways for thread safe:
+1.) Add synchronized as above.
+2.) Create eager instance.
+
+public class OompaloompaBarFactoy implements Factory {
+    private int counter = 0;
+
+    ### eager instance ###
+    private static OompaloompaBarFactoy uniqueInstance = new OompaloompaBarFactoy();
+
+    private OompaloompaBarFactoy() {
+    }
+
+3.) Double checked locking
+
+
+public class OompaloompaBarFactoy implements Factory {
+    private int counter = 0;
+
+    ## volatile : handles variable correctly when multiple threads init ##  
+    private volatile static OompaloompaBarFactoy uniqueInstance;
+
+
+    ### private constructor ###
+    private OompaloompaBarFactoy() {
+    }
+
+    public static synchronized OompaloompaBarFactoy getInstance() {
+
+        if (uniqueInstance == null) {   
+
+            ### only synce once
+            synchronized (OompaLoompaBarFactory.flass) {
+                if (uniqueInstance == null) {
+                    uniqueInstance = new OompaLoompaBarFactory
+                }
+            }
+            ###
+
+        }
+        return uniqueInstance;
+
+    }
+
+BarProducer is Thread : can be run to creeate each type of chocolate bar using each type of factory.
+
+public class BarProducer extends Thread {
+	Factory wonka;
+	public int count = 0; // each producer creates 50 bars
+	public int id;
+	public String barType;
+
+	public BarProducer(int identifier, String type) {
+		id = identifier;
+		barType = type;
+		System.out.println("creating new Bar Producer with ID:" + id);
+	}
+
+    ## producing 10 bars of chocolate ##
+	public void run() {
+		while (count < 10) {
+			try {
+				sleep(100);
+			} catch (InterruptedException e) {
+			}
+			count++;
+			// System.out.println(id+":running");
+			if (barType == "wonka") {
+				WonkaBarFactory.getInstance().create(id);
+			} else if (barType == "oompaloompa") {
+				OompaloompaBarFactoy.getInstance().create(id);
+			}
+		}
+	}
