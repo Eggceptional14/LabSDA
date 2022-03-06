@@ -1,0 +1,11 @@
+Document is receiver class.
+
+Move the code fore eaech individual action into it's own separate class :
+Erase and Write command -> EraseeCommand and WriteCommand classes
+
+Undo and Redo command classes :
+Command that we need to undo/redo will be parameter of constructor.
+That command will be undo/redo as soon as UndoCommand/RedoCommand instance is created.
+
+DocumentInvoker is invoker class of document.
+Calling the command via invoker will add the command to commands list(for undo and redo).

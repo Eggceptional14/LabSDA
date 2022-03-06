@@ -1,0 +1,40 @@
+Memento pattern : save/restore the previous state of an object.
+(without revealing the details of its implementation).
+
+ScheduleGUI is CareTaker class (trigger save/restore command).
+
+java.io.Serializable is Memento interface.
+ScheduleTableModel.Memento is ConcreteMemento class.
+
+DefaultTableModel is Originator interface.
+ScheduleTableModel is ConcreteOriginator class.
+createMemento() is save() method (save current state) of ConcreteOriginator class and
+setMemento() is setState() method (restore state).
+
+### save state of an object ###
+public Memento createMemento() {
+    // COMPLETE.
+    int numberOfCols = getColumnCount();
+    Vector<String> colIdentifiers = new Vector<String>(numberOfCols);
+    for (int i = 0; i < numberOfCols; i++) {
+        colIdentifiers.add(getColumnName(i));
+    }
+
+    int numRows = getRowCount();
+    Vector newDataVector = new Vector(numRows);
+    Vector rows = getDataVector();
+    for (int i = 0; i < numRows; i++) {
+        Vector row = (Vector) ((Vector) rows.get(i)).clone();
+        newDataVector.add(i, row);
+    }
+
+    return new Memento(columnIdentifiers, newDataVector);
+
+}
+
+### restore state of an object ###
+public void setMemento(Memento memento) {
+    // COMPLETE.
+    setDataVector(memento.getDataVector(), memento.getColumnIdentifiers());
+
+}

@@ -1,0 +1,82 @@
+Principle of Least Knowledge :  Talk only to your immediate friends.
+
+Before :
+Client(MakeTea) has to deals with the complex subsystem(tea making process).
+
+public class MakeTea {
+    public static void main(String[] args) {
+        TeaCup blueCup = new TeaCup();
+        Water water = new Water();
+        TeaInfuser infuser = new TeaInfuser();
+        Tea tea = new Tea("Earl Grey");
+        infuser.addTea(tea);
+        water.boilWater();
+        blueCup.addWater(water);
+        blueCup.setSteepTime(15);
+        blueCup.steep();
+
+    }
+}
+
+After :
+Move the complex subsystem to Facade class.
+Client(MakeTea) deals talk to only Facade class(unified interface) which contains complex subsystem.
+TeaFacadee defines a higher level interface -> make subsystem easier to use.
+
+public class MakeTea {
+    public static void main(String[] args) {
+        TeaCup blueCup = new TeaCup();
+        Water water = new Water();
+        TeaInfuser infuser = new TeaInfuser();
+
+        TeaFacade teaMaker = new TeaFacade(blueCup, water, infuser);
+        teaMaker.makeTea("Earl Grey");
+    }
+}
+
+### Benefit ###
+If we need to make tea multiple time, we have to call the whole sequence multiple times.
+
+Not Using Facade:
+public static void main(String[] args) {
+        TeaCup blueCup = new TeaCup();
+        Water water = new Water();
+        TeaInfuser infuser = new TeaInfuser();
+        Tea tea = new Tea("Earl Grey");
+        TeaCup blueCup2 = new TeaCup();
+        Water water2 = new Water();
+        TeaInfuser infuser2 = new TeaInfuser();
+        Tea tea2 = new Tea("Earl Grey");
+
+        infuser.addTea(tea);
+        water.boilWater();
+        blueCup.addWater(water);
+        blueCup.setSteepTime(15);
+        blueCup.steep();
+        
+        infuser2.addTea(tea2);
+        water2.boilWater();
+        blueCup2.addWater(water2);
+        blueCup2.setSteepTime(15);
+        blueCup2.steep();
+
+    }
+
+Using Facade:
+
+public class MakeTea {
+    public static void main(String[] args) {
+        TeaCup blueCup = new TeaCup();
+        Water water = new Water();
+        TeaInfuser infuser = new TeaInfuser();
+        TeaCup blueCup2 = new TeaCup();
+        Water water2 = new Water();
+        TeaInfuser infuser2 = new TeaInfuser();
+
+        TeaFacade teaMaker = new TeaFacade(blueCup, water, infuser);
+        teaMaker.makeTea("Earl Grey");
+
+        TeaFacade teaMaker2 = new TeaFacade(blueCup2, water2, infuser2);
+        teaMaker2.makeTea("Earl Grey");
+    }
+}

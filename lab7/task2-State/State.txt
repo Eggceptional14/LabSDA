@@ -1,0 +1,24 @@
+State Pattern : allows an objecet to alter its behavior when its internal state changes.
+
+State interface defines that each state has to implement their own function over 5 same buttons.
+
+Each state has different action on the buttons.
+
+RemoteDevice is Context class.
+    - contains object of each state and variable to storee the current state of the device.
+public class RemoteDevice {
+	// the different states the device may be in
+	private State playing;
+	private State paused;
+	private State stopped;
+	private State rewind;
+	private State locked;
+	
+	//the current state of the player
+	private State currentState;
+
+    // press the Play button	
+	public void pressPlay() {
+		currentState.pressPlay();
+	}
+    ##### action of Play button depends on current state of the device ####
