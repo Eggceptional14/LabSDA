@@ -54,12 +54,12 @@ public class ScheduleGUI extends JFrame { // Caretaker
         memento = tableModel.createMemento();
         JMenuBar mb = new JMenuBar();
         JMenu fileMenu = new JMenu("File");
+        JMenuItem saveAsMenuItem = new JMenuItem("Save as..");
+        JMenuItem loadMenuItem = new JMenuItem("Load..");
         // Add "Save As.." menu item here; register corresponding
         // listener (optional);
         // COMPLETE.
-        JButton saveAsButton = new JButton("Save as..");
-        saveAsButton.setPreferredSize(new Dimension(125, 27));
-        saveAsButton.addActionListener(new ActionListener() {
+        saveAsMenu.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 // Get new memento.
                 // COMPLETE.
@@ -85,9 +85,7 @@ public class ScheduleGUI extends JFrame { // Caretaker
             }
         });
 
-        JButton loadButton = new JButton("Load..");
-        loadButton.setPreferredSize(new Dimension(125, 27));
-        loadButton.addActionListener(new ActionListener() {
+        loadMenuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 // Get new memento.
                 // COMPLETE.
@@ -120,6 +118,8 @@ public class ScheduleGUI extends JFrame { // Caretaker
         });
 
         fileMenu.add(exitMenuItem);
+        fileMenu.add(saveAsMenuItem);
+        fileMenu.add(loadMenuItem);
         mb.add(fileMenu);
         setJMenuBar(mb);
 
@@ -155,8 +155,6 @@ public class ScheduleGUI extends JFrame { // Caretaker
         JPanel panel = new JPanel();
         panel.add(newButton);
         panel.add(revertButton);
-        panel.add(saveAsButton);
-        panel.add(loadButton);
 
         getContentPane().add(panel, BorderLayout.SOUTH);
 
