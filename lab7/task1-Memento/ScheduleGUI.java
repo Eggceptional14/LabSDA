@@ -59,7 +59,7 @@ public class ScheduleGUI extends JFrame { // Caretaker
         // Add "Save As.." menu item here; register corresponding
         // listener (optional);
         // COMPLETE.
-        saveAsMenu.addActionListener(new ActionListener() {
+        saveAsMenuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 // Get new memento.
                 // COMPLETE.
