@@ -1,0 +1,12 @@
+Solved : Interface incompatibility and don't want to change interface.
+
+Database and Records have interface incompatibility.
+
+In this task, we used Object adapter.
+Object adapter has : Client, Target, Adapter, Adaptee
+
+Client is TestDatabase ; only sees target interface.
+Target is DatabaseTarget ; each adapter implements target interface.
+Adapter adapt Records and Database to match with the DatabaseTarget.
+    - All adapter requests get delegated to the adaptee.
+Adaptee is Records and Database.

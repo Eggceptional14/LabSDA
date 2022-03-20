@@ -1,0 +1,20 @@
+Baby is a Subject to be observed by observer, it has 2 types of notifyObserver function.
+
+// pull
+public void notifyObservers() {
+    for (int i = 0; i < observers.size(); i++) {
+        Observer observer = (Observer) observers.get(i);
+        observer.update(this);
+    }
+}
+
+// push
+public void notifyObservers(String dataName, boolean dataCrying, int dataLevel) {
+    for (int i = 0; i < observers.size(); i++) {
+        Observer observer = (Observer) observers.get(i);
+        observer.update(dataName, dataCrying, dataLevel);
+    }
+}
+
+SimpleMonitor using PUSH version of update(), it required the new data as parameters.
+AdvanceMonitor using PULL version of update(), it has the updated subject as a parameter and pull the data from it.

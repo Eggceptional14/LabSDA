@@ -1,0 +1,3 @@
+SoloBehavior and Guitar is families of behaviors(algorithms).
+
+Defines a families of algorithm by using interfaces, encapsulate and make them interchangable.

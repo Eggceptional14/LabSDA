@@ -1,0 +1,60 @@
+Group region as types of factories and each region has its own component factory.
+
+region A has : ASlotFactory, AComponentFactory
+
+public class NJSlotFactory extends SlotFactory {
+
+	protected Slot makeSlot(String item) {
+		Slot slot = null;
+
+		SlotComponentFactory componentFactory = new NJComponentFactory();   ###
+
+		if (item.equals("bonus")) {
+			slot = new BonusSlot(componentFactory);
+			slot.setName("New Jersey Style Bonus Slot");
+		} else if (item.equals("progressive")) {
+			slot = new ProgressiveSlot(componentFactory);
+			slot.setName("New Jersey Style Progressive Slot");
+		} else if (item.equals("straight")) {
+			slot = new StraightSlot(componentFactory);
+			slot.setName("New Jersey Style Straight Slot");
+		}
+		return slot;
+	}
+}
+
+# 1 region use 1 type of factory/component factory
+# component factory deals with different type of slot(straight/bonus/progressive)
+public class NJComponentFactory implements SlotComponentFactory {
+
+    public Cabinet createCabinet(String type) {
+        switch (type) {
+            case "straight":
+                return new SmallCabinet();
+            case "bonus":
+                return new LargeCabinet();
+            case "progressive":
+                return new SmallCabinet();
+            default:
+                return null;
+        }
+    }
+
+# each slot type use components from input component factory to be its components
+public class BonusSlot extends Slot {
+	SlotComponentFactory componentFactory;
+
+	public BonusSlot(SlotComponentFactory componentFactory) {
+		this.componentFactory = componentFactory;
+	}
+
+	void build(String type) {
+		System.out.println("Building " + name);
+		cabinet = componentFactory.createCabinet(type);
+		display = componentFactory.createDisplay(type);
+		gpu = componentFactory.createGPU(type);
+		payment = componentFactory.createPayment(type);
+		software = componentFactory.createOS(type);
+
+	}
+}

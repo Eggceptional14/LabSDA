@@ -1,0 +1,41 @@
+Template method focuses encapsulation on the STEPS of the algorithm.
+
+### HollyWood Principle / Dependency inversion ###
+High-level methods should not depend on lower-level methods.
+In this case, EggBreakfast is high-level (depends on abstraction) 
+and each menu is lower level methods(actual implementation of abstraction).
+
+EggCooking is abstract (step of algorithm) for each menu to use prepare function.
+
+public abstract class EggCooking {
+
+    ### every menus have the same prepare sequence but different implementation ###
+    void prepareEgg(int eggNum) {
+        crackEggs(eggNum);
+        stirEggs();
+        prepare();
+        cook();
+        serve();
+
+        if (askCustomer()) {
+            addSpread(); 
+        }
+        System.out.println("--------------------");
+    }
+
+    ### each menu has it's own implementation of each step ###
+    abstract void crackEggs(int eggNum);
+    abstract void stirEggs();
+    abstract void cook();
+    abstract void prepare();
+    abstract void addSpread();
+
+ !!!   ### hook function : used for debuggin and extending functionality (optional) ### !!!
+        ### in this case, used for adding spread ###
+    boolean askCustomer() {
+        return true;
+    }
+    void serve() {
+        System.out.println("Putting the eggs on the plate");
+    }
+}

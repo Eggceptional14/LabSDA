@@ -1,0 +1,12 @@
+Each decorator extends the same supertype as the object its decorate.
+
+In this case, each decorator extends Tree.
+
+Each decorator class : 
+public String getDescription() {
+    return tree.getDescription() + "its additional description";
+}
+
+public double cost() {
+    return this.cost + tree.cost();
+}
