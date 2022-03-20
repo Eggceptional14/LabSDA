@@ -22,10 +22,8 @@ public class Object extends Object_Component {
     public float volume() {
         float total_volume = 0;
         for (int i = 0; i < this.list.size(); i++) {
-            
             Object_Component comp = (Object_Component)this.list.get(i);
             total_volume += comp.volume();
-            System.out.println(i);
         }
         return total_volume;
     }
