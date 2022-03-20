@@ -13,7 +13,7 @@ public class Sphere extends Prim {
 	}
 
 	public float volume() {
-		return (float) (4/3 * Math.PI*radius*radius*radius);
+		return (float) ((4.0/3.0)*Math.PI*(radius*radius*radius));
 	}
 
 	public Iterator createIterator() {

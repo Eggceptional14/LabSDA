@@ -19,7 +19,6 @@ public class test_prims {
   
          pcom2.add(pcom1);
          pcom2.add(sphere1);
-
      
          pcom2.render();
          System.out.println(pcom2.volume());
