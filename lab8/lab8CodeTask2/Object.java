@@ -2,19 +2,23 @@ import java.util.ArrayList;
 import java.util.Iterator;
 public class Object extends Object_Component {
     private ArrayList<Object_Component> list = new ArrayList<Object_Component>();
-
+    private float o_volume ;
+    
     public void add(Object_Component object_component) {
         this.list.add(object_component);
+        this.o_volume += list.volume();
+
     }
 
     @Override
     public void render() {
-        System.out.println("Hello");
+        for(Object_Component objectComp : list )
+            ((Object_Component) iterator.next()).render();
     }
 
     @Override
     public float volume() {
-        return 0;
+        return this.o_volume;
     }
 
     @Override
