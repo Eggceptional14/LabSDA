@@ -30,6 +30,11 @@ public class CompositeIterator implements Iterator {
 			if (o instanceof Object_Component) {
 				stack.push(o.createIterator());
 			}
+
+			if (!(o instanceof Prim)) {
+				return next();
+			}
+
 			return o;
 		}
 		else {
