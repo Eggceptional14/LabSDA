@@ -12,7 +12,7 @@ public class Object extends Object_Component {
     @Override
     public void render() {
         Iterator iterator = this.list.iterator();
-        if (iterator.hasNext()) {
+        while (iterator.hasNext()) {
             Object_Component comp = (Object_Component)iterator.next();
             comp.render();
         }
