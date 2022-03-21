@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class PancakeHouseMenuIterator implements Iterator<MenuItem>{
+public class PancakeHouseMenuIterator implements Iterator{
     private Iterator menuItemsIterator;
 
     public PancakeHouseMenuIterator( ArrayList<MenuItem> menuItems ){
