@@ -1,44 +1,42 @@
 import java.util.LinkedList;
 import java.util.List;
 
+import javafx.print.PrintColor;
+
 public class Test {
 
   public static void main(String[] args) throws InterruptedException {
 
-    List<Shape> shapes = new LinkedList<Shape>();
+    Screen screen1 = new Screen();
 
-    shapes.add(new Rectangle(10, 10, 100, 100));
-    shapes.add(new Rectangle(110, 110, 200, 200));
-    shapes.add(new Circle(250, 250, 30));
-    shapes.add(new Square(250, 100, 40));
+    screen1.addShape(new Square(250, 100, 40));
+    screen1.addShape(new Circle(250, 250, 30));
+    screen1.addShape(new Rectangle(10, 10, 100, 100));
+    screen1.addShape(new Rectangle(110, 110, 200, 200));
+    screen1.addShape(new Triangle(50, 200, 40));
 
-    for (Shape s : shapes) {
-      s.draw();
-    }
+    screen1.draw_line( 120, 120, 240, 240 );
+    screen1.draw_pixel( 50, 50 );
+    screen1.draw_circle( 200, 240, 5);
 
-    Thread.sleep(2000);
+    screen1.draw();
 
-    for (Shape s : shapes) {
-      s.setDrawingService(new WrapPrinter());
-    }
+    PrinterDisplay printer1 = new PrinterDisplay();
 
-    Thread.sleep(2000);
+    printer1.addShape(new Square(250, 100, 40));
+    printer1.addShape(new Circle(250, 250, 30));
+    printer1.addShape(new Rectangle(10, 10, 100, 100));
+    printer1.addShape(new Rectangle(110, 110, 200, 200));
+    printer1.addShape(new Triangle(50, 200, 40));
 
-    for (Shape s : shapes) {
-      s.draw();
-    }
+    printer1.print_line( 120, 120, 240, 240 );
+    printer1.print_pixel( 50, 50 );
+    printer1.print_circle( 200, 240, 5);
 
-    Thread.sleep(2000);
+    printer1.print();
 
-    for (Shape s : shapes) {
-      s.setDrawingService(new WrapDataProjector());
-    }
 
-    Thread.sleep(2000);
-
-    for (Shape s : shapes) {
-      s.draw();
-    }
 
   }
 }
+  
