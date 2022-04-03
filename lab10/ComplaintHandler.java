@@ -1,13 +1,13 @@
-public class SpamHandler extends Handler{
+public class ComplaintHandler extends Handler {
 
-    public SpamHandler(Handler successor) {
+    public ComplaintHandler(Handler successor) {
         super(successor);
     }
 
     @Override
     public void handleRequest(Email email) {
-        if (email.getType().equals("spam")) {
-            System.out.println("This is a spam email.");
+        if (email.getType().equals("complaint")) {
+            System.out.println("This is a complaint email.");
         }
         else {
             if (this.getSuccessor() != null) 

@@ -1,3 +1,4 @@
+// Request
 public class Email {
     private String type;
 
