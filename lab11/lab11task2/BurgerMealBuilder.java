@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package builderlab;
 
 /**
  *
@@ -11,5 +10,17 @@ package builderlab;
  */
 /** Concrete builder for a meal with a burger, fries, and a cola. */
 public class BurgerMealBuilder extends MealBuilder {
+    public void buildEntree() {
+        theMeal.setEntree("burger");
+    }
 
+    public void buildSide() {
+        theMeal.setSide("fries");
+    }
+
+    public void buildDrink() {
+        theMeal.setDrink("cola");
+    }
+
+    
 }
