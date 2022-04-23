@@ -5,7 +5,6 @@
 // BFH, HTA Biel-Bienne.
 // All rights reserved.
 
-package pattern.proxy;
 
 import java.util.HashMap;
 
@@ -14,25 +13,18 @@ public class MapProxy implements AbstractMap {
     public MapProxy(String fileName)
     {
         // COMPLETE
-
     }
 
     public String find(String key) throws Exception
     {
+        
         // COMPLETE
-
-
-
-
-
+        return key;
     }
 
     public void add(String key, String value) throws Exception
     {
         // COMPLETE
-
-
-
     }
 
     private Map getMap()
