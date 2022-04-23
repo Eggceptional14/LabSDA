@@ -7,12 +7,11 @@
 //
 // Based on: J.W. Cooper, Java Design Patterns, Addison-Wesley 2000.
 
-package pattern.flyweight;
 
 import java.util.*;
 
 public class IconFactory {
-    private Map iconmap = new HashMap();
+    private Map<String,AbstractIcon> iconmap = new HashMap<String,AbstractIcon>();
 
     // Singleton.
     // COMPLETE
@@ -23,22 +22,22 @@ public class IconFactory {
             AbstractIcon newIcon;
             switch (key.toLowerCase()) {
                 case "folder":
-                    newIcon = FolderIcon();
+                    newIcon = new FolderIcon();
                     break;
                 case "java":
-                    newIcon = JavaIcon();
+                    newIcon = new JavaIcon();
                     break;
                 case "pdf":
-                    newIcon = PdfIcon();
-                    break;
+                    newIcon = new PdfIcon();
+                    break; 
                 case "picture":
-                    newIcon = PictureIcon();
+                    newIcon = new PictureIcon();
                     break;
                 case "text":
-                    newIcon = TextIcon();
+                    newIcon = new TextIcon();
                     break;
                 default:
-                    newIcon = UnknownIcon();
+                    newIcon = new UnknownIcon();
             }
             iconmap.put(key.toLowerCase(), newIcon);
         }

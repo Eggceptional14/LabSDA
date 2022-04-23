@@ -7,7 +7,6 @@
 //
 // Based on: J.W. Cooper, Java Design Patterns, Addison-Wesley 2000.
 
-package pattern.flyweight;
 
 import java.awt.*;
 import javax.swing.*;
@@ -23,7 +22,21 @@ public class PdfIcon extends AbstractIcon {
 
 
 
-
+    PdfIcon() {
+        URL iconURL =
+            ClassLoader.getSystemResource("images/pdf.png");
+        if (iconURL != null) {
+            icon = new ImageIcon(iconURL);
+        } else {
+            System.out.println("Icon images/pdf.png not found");
+        }
+        }
+    
+        public void draw(Graphics g, int tx, int ty, String name, boolean sel) {
+            g.clearRect(tx, ty, icon.getIconWidth(), icon.getIconHeight());
+        icon.paintIcon(null, g, tx, ty);
+            g.drawString(name, tx, ty + H + 15);  //title
+        }
 
 
 
