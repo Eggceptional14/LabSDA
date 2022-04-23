@@ -10,15 +10,19 @@ import java.util.HashMap;
 
 public class MapProxy implements AbstractMap {
 
+    private AbstractMap realMap;
+
     public MapProxy(String fileName)
     {
         // COMPLETE
+        this.realMap = new Map( fileName );
     }
 
     public String find(String key) throws Exception
     {
         
         // COMPLETE
+        
         return key;
     }
 
