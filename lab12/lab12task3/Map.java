@@ -5,7 +5,7 @@
 // BFH, HTA Biel-Bienne.
 // All rights reserved.
 
-package pattern.proxy;
+
 
 import java.io.*;
 import java.util.*;

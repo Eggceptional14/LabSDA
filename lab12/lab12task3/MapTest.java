@@ -9,9 +9,11 @@
 // Usage: java junit.textui.TestRunner patterns.proxy.MapTest
 
 
-package pattern.proxy;
 
 import junit.framework.*;
+
+import static org.junit.Assert.assertEquals;
+
 import java.util.Date;
 
 public class MapTest extends TestCase {
@@ -20,51 +22,51 @@ public class MapTest extends TestCase {
     private final int COUNT = 10000;
 
     public MapTest(String name) {
-	super(name);
+		super(name);
     }
 
     public static void main (String[] args) {
-	junit.textui.TestRunner.run(suite());
+		junit.textui.TestRunner.run(suite());
     }
 
     public static Test suite() {
-	TestSuite suite = new TestSuite(MapTest.class);
-	return suite;
+		TestSuite suite = new TestSuite(MapTest.class);
+		return suite;
     }
 
     public void setUp() throws Exception {
-	String sep = System.getProperty("file.separator");
-	if (sep.equals("/")) {
-	    // assume we are on Unix.
-	    fileName = "/tmp/key_values";
-	} // end of if (sep.equals("/"))
-	else {
-	    fileName = "C:\\TEMP\\key_values";
-	} // end of else
+		String sep = System.getProperty("file.separator");
+		if (sep.equals("/")) {
+			// assume we are on Unix.
+			fileName = "/tmp/key_values";
+		} // end of if (sep.equals("/"))
+		else {
+			fileName = "C:\\TEMP\\key_values";
+		} // end of else
     }
 
     public void test1() throws Exception {
-	AbstractMap map = new Map(fileName);
+		AbstractMap map = new Map(fileName);
     }
 
     public void test2() throws Exception {
-	String value = "Eric Dubuis";
-	AbstractMap map = new Map(fileName);
-	map.add("name", value);
-	String result = map.find("name");
-	assertEquals(value, result);
+		String value = "Eric Dubuis";
+		AbstractMap map = new Map(fileName);
+		map.add("name", value);
+		String result = map.find("name");
+		assertEquals(value, result);
     }
 
     public void test3() throws Exception {
-	// Performance test.
-	String value = "Eric Dubuis";
-	AbstractMap map = new Map(fileName);
-	map.add("name", value);
-	System.out.println("\nStarting loop at: " + new Date().toString());
-	for (int i = 0; i < COUNT; i++) {
-	     map.find("name");
-	} // end of for (int i = 0; i < COUNT; i++)
-	System.out.println("Finished loop at: " + new Date().toString());
+		// Performance test.
+		String value = "Eric Dubuis";
+		AbstractMap map = new Map(fileName);
+		map.add("name", value);
+		System.out.println("\nStarting loop at: " + new Date().toString());
+		for (int i = 0; i < COUNT; i++) {
+			map.find("name");
+		} // end of for (int i = 0; i < COUNT; i++)
+		System.out.println("Finished loop at: " + new Date().toString());
     }
 
     public void tearDown() throws Exception {

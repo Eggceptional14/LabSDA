@@ -5,7 +5,7 @@
 // BFH, HTA Biel-Bienne.
 // All rights reserved.
 
-package pattern.proxy;
+
 
 public interface AbstractMap {
 
