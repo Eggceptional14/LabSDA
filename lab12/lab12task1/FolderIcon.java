@@ -7,7 +7,6 @@
 //
 // Based on: J.W. Cooper, Java Design Patterns, Addison-Wesley 2000.
 
-package pattern.flyweight;
 
 import java.awt.*;
 import javax.swing.*;
@@ -22,12 +21,12 @@ public class FolderIcon extends AbstractIcon {
     // We make this package-visible so that only the corresponding
     // factory can instantiate us.
     FolderIcon() {
-	URL iconURL =
-	    ClassLoader.getSystemResource("images/folder_open.png");
+	URL iconURL = ClassLoader.getSystemResource("images/folder_open.png");
 	if (iconURL != null) {
 	    iconSel = new ImageIcon(iconURL);
 	} else {
 	    System.out.println("Icon images/folder_open.png not found");
+		
 	}
 	iconURL =
 	    ClassLoader.getSystemResource("images/folder.png");

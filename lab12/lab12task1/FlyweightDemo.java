@@ -7,7 +7,6 @@
 //
 // Based on: J.W. Cooper, Java Design Patterns, Addison-Wesley 2000.
 
-package pattern.flyweight;
 
 import java.awt.event.*;
 import javax.swing.*;
@@ -24,7 +23,7 @@ import java.io.*;
 public class FlyweightDemo extends JFrame
     implements MouseMotionListener
 {
-    private ArrayList items;
+    private ArrayList<Item> items;
     private IconFactory factory;
     private final int Top = 30, Left = 30;
     private final int  W = 50, H = 30;
@@ -32,14 +31,14 @@ public class FlyweightDemo extends JFrame
     private String selectedName = "";
 
     private class Item {
-	String type;
-	String name;
-	AbstractIcon icon;
-	Item(String type, String name, AbstractIcon icon) {
-	    this.type = type;
-	    this.name = name;
-	    this.icon = icon;
-	}
+        String type;
+        String name;
+        AbstractIcon icon;
+        Item(String type, String name, AbstractIcon icon) {
+            this.type = type;
+            this.name = name;
+            this.icon = icon;
+        }
     }
 
     public FlyweightDemo() {
@@ -60,19 +59,18 @@ public class FlyweightDemo extends JFrame
     private void loadItems() {
 	// Get the icon factory.
 	// COMPLETE.
+    factory = new IconFactory();
 
 
 	// Create a bunch of different kind of items.
 	// COMPLETE.
-        items = new ArrayList();
-
-
-
-
-
-
-
-
+        items = new ArrayList<Item>();
+        items.add( new Item("folder", "New Folder", factory.createIcon("folder")));
+        items.add( new Item("java", "Car.java", factory.createIcon("java")));
+        items.add( new Item("pdf", "SDA.pdf", factory.createIcon("pdf")));
+        items.add( new Item("picture", "image.jpg", factory.createIcon("picture")));
+        items.add( new Item("text", "exam.txt", factory.createIcon("text")));
+        items.add( new Item("python", "test.py", factory.createIcon("python")));
     }
 
 
@@ -84,20 +82,16 @@ public class FlyweightDemo extends JFrame
         int j = 0;      //count number in row
         int row = Top;  //start in upper left
         int x = Left;
-
+        boolean selected;
+        AbstractIcon icon;
         //go through all the items
         for (int i = 0; i< items.size(); i++) {
 	    // Get next item, and draw its icon and name:
 	    // COMPLETE.
             item = (Item) items.get(i);
-
-
-
-
-
-
-
-
+            icon = (AbstractIcon) item.icon;
+            selected = selectedName == item.name;
+            icon.draw(g, x, row, item.name, selected );
 	    // Recalculation of part of the extrinsic state:
             x = x + HSpace;          //change to next posn
             j++;

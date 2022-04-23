@@ -7,7 +7,6 @@
 //
 // Based on: J.W. Cooper, Java Design Patterns, Addison-Wesley 2000.
 
-package pattern.flyweight;
 
 import java.awt.Graphics;
 
