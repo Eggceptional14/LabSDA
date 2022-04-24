@@ -6,6 +6,9 @@
 // All rights reserved.
 
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.HashMap;
 
 public class MapProxy implements AbstractMap {
@@ -15,33 +18,41 @@ public class MapProxy implements AbstractMap {
     public MapProxy(String fileName)
     {
         // COMPLETE
-        this.realMap = new Map( fileName );
+        this.realMap = new Map (fileName);
+
     }
 
     public String find(String key) throws Exception
     {
-        
-        // COMPLETE
-        
+        String file = (String) hashtable.get(key);
+        if (file.isEmpty()) {throw new Exception("File is empty");}
+
         return key;
     }
 
     public void add(String key, String value) throws Exception
     {
+
+        hashtable.put(key, value);
+        String newKey = (String) hashtable.get(key);
+        if (newKey.isEmpty()) {throw new Exception("Fail to add");}
+        else { System.out.println("Added successfully");}
+
+
+
+
         // COMPLETE
     }
 
-    private Map getMap()
-    {
-	if (map == null) {
-	    map = new Map(fileName);
-	} // end of if (map == null)
-	return map;
+    private Map getMap() {
+	    if (map == null) {
+	     map = new Map(fileName);
+	    } // end of if (map == null)
+	    return map;
     }
 
-    private String get(String key)
-    {
-	return (String) hashtable.get(key);
+    private String get(String key) {
+	    return (String) hashtable.get(key);
     }
 
     private void put(String key, String value)
