@@ -25,7 +25,9 @@ public class MapProxy implements AbstractMap {
     public String find(String key) throws Exception
     {
         String file = (String) hashtable.get(key);
-        if (file.isEmpty()) {throw new Exception("File is empty");}
+        if (file.isEmpty()) {
+            throw new Exception("File is empty");
+        }
 
         return key;
     }
@@ -57,7 +59,7 @@ public class MapProxy implements AbstractMap {
 
     private void put(String key, String value)
     {
-	hashtable.put(key, value);
+	    hashtable.put(key, value);
     }
 
     private String fileName;
