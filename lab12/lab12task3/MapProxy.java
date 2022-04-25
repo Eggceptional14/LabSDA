@@ -29,20 +29,16 @@ public class MapProxy implements AbstractMap {
             throw new Exception("File is empty");
         }
 
-        return key;
+        return file;
     }
 
     public void add(String key, String value) throws Exception
     {
 
-        hashtable.put(key, value);
+        this.put(key, value);
         String newKey = (String) hashtable.get(key);
         if (newKey.isEmpty()) {throw new Exception("Fail to add");}
-        else { System.out.println("Added successfully");}
-
-
-
-
+        // else { System.out.println("Added successfully");}
         // COMPLETE
     }
 

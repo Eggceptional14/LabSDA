@@ -15,6 +15,7 @@ import junit.framework.*;
 
 import static org.junit.Assert.assertEquals;
 
+import java.nio.file.SecureDirectoryStream;
 import java.util.Date;
 
 public class MapProxyTest extends TestCase {
